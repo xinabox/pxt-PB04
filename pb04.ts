@@ -1,7 +1,7 @@
 /**
  * PB04 Intelligent Battery Module
  */
-//% weight=10 color=#9F79EE icon="\uf108" block="PB04"
+//% weight=10 color=#9F79EE icon="\uf240" block="PB04"
 namespace PB04 {
     // Device I2C Address
     const MAX11646_I2C_ADDRESS = 0x36
@@ -11,7 +11,7 @@ namespace PB04 {
     const MAX11646_REG_CONF = 0x00
 
     // System Defines
-    const MAX11646_VOLTAGE =0x21
+    const MAX11646_VOLTAGE = 0x21
     const MAX11646_CURRENT = 0x23
     const MAX11646_SEL0 = 0x40
     const MAX11646_SEL1 = 0x20
@@ -52,18 +52,18 @@ namespace PB04 {
     }
 
     /**
-	* PB04 Voltage (V)
+	* PB04 Voltage (V) measurement
 	*/
-    //% blockId="Voltage" block="Voltage (V)"
+    //% blockId="Voltage" block=" get Voltage (V)"
     //% blockGap=1 weight=90
     export function getVoltage(): number {
         return readVoltage();
     }
 
     /**
-	* PB04 Current (mA)
+	* PB04 Current (mA) measurement
 	*/
-    //% blockId="Current" block="Current (mA)"
+    //% blockId="Current" block=" get Current (mA)"
     //% blockGap=1 weight=90
     export function getCurrent(): number {
         return readCurrent();
