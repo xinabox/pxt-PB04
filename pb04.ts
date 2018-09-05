@@ -54,7 +54,7 @@ namespace PB04 {
     /**
 	* PB04 Voltage (V) measurement
 	*/
-    //% blockId="Voltage" block=" get Voltage (V)"
+    //% blockId="Voltage" block="get Voltage (V)"
     //% blockGap=1 weight=90
     export function getVoltage(): number {
         return readVoltage();
@@ -63,7 +63,7 @@ namespace PB04 {
     /**
 	* PB04 Current (mA) measurement
 	*/
-    //% blockId="Current" block=" get Current (mA)"
+    //% blockId="Current" block="get Current (mA)"
     //% blockGap=1 weight=90
     export function getCurrent(): number {
         return readCurrent();
