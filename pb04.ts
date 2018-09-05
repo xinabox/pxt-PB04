@@ -1,7 +1,7 @@
 /**
  * PB04 Intelligent Battery Module
  */
-//% weight=10 color=#9F79EE icon="\uf240" block="PB04"
+//% weight=99 color=#9F79EE icon="\uf240" block="PB04"
 namespace PB04 {
     // Device I2C Address
     const MAX11646_I2C_ADDRESS = 0x36
@@ -30,7 +30,7 @@ namespace PB04 {
         let var1 = modeADC(MAX11646_CURRENT);
         let var2 = (var1 & 0xFF00) >> 8;
         let var3 = (var1 & 0x00FF);  
-        let current = (((((((var2 - 252)*256) + (var3-1))*2.048)/1024)/100)/0.02)*1000;
+        let current = (((((((var2 - 252)*256) + (var3-1)) * 2.048)/1024)/100) * 50 ) * 1000;
         return current;
     }
 
@@ -38,14 +38,14 @@ namespace PB04 {
         let var1 = modeADC(MAX11646_VOLTAGE);
         let var2 = (var1 & 0xFF00) >> 8;
         let var3 = (var1 & 0x00FF);       
-        let voltage = (((((var2 - 252)*256) + var3)*2.048)/1024)*2;
+        let voltage = (((((var2 - 252)*256) + var3) * 2.048)/1024)*2;
         return voltage;
     }
 
-    function modeADC(data: number): number {
+    function modeADC(reg: number): number {
         let buf: Buffer = pins.createBuffer(2);
         buf[0] = MAX11646_SETUP;
-        buf[1] = data;
+        buf[1] = reg;
         pins.i2cWireBuffer(MAX11646_I2C_ADDRESS, buf, false);
         let data = pins.i2cReadNumber(MAX11646_I2C_ADDRESS, NumberFormat.UInt16LE, false);
         return data;
