@@ -1,0 +1,15 @@
+{
+    "name": "pxt-PB04",
+    "version": "0.0.1",
+    "description": "MakeCode Package for the ☒PB04",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "pb04.ts",
+        "README.md"
+    ],
+    "public": true
+}
