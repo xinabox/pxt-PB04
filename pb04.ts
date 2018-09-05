@@ -1,7 +1,7 @@
 /**
  * PB04 Intelligent Battery Module
  */
-//% weight=99 color=#9F79EE icon="\uf240" block="PB04"
+//% weight=99 color=#000000 icon="\uf240" block="PB04"
 namespace PB04 {
     // Device I2C Address
     const MAX11646_I2C_ADDRESS = 0x36
@@ -46,7 +46,7 @@ namespace PB04 {
         let buf: Buffer = pins.createBuffer(2);
         buf[0] = MAX11646_SETUP;
         buf[1] = reg;
-        pins.i2cWireBuffer(MAX11646_I2C_ADDRESS, buf, false);
+        pins.i2cWriteBuffer(MAX11646_I2C_ADDRESS, buf, false);
         let data = pins.i2cReadNumber(MAX11646_I2C_ADDRESS, NumberFormat.UInt16LE, false);
         return data;
     }
@@ -55,7 +55,7 @@ namespace PB04 {
 	* PB04 Voltage (V) measurement
 	*/
     //% blockId="Voltage" block="get Voltage (V)"
-    //% blockGap=1 weight=90
+    //% weight=99
     export function getVoltage(): number {
         return readVoltage();
     }
@@ -64,7 +64,7 @@ namespace PB04 {
 	* PB04 Current (mA) measurement
 	*/
     //% blockId="Current" block="get Current (mA)"
-    //% blockGap=1 weight=90
+    //% weight=99
     export function getCurrent(): number {
         return readCurrent();
     }
