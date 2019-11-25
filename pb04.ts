@@ -1,8 +1,3 @@
-/**
- * PB04 Intelligent Battery Module
- */
-//% weight=99 color=#000000 icon="\uf240" block="PB04"
-
 enum VOLT {
     //% block="V"
     V = 1,
@@ -10,6 +5,11 @@ enum VOLT {
     //% block="mV"
     MV = 2
 }
+
+/**
+ * PB04 Intelligent Battery Module
+ */
+//% weight=99 color=#000000 icon="\uf240" block="PB04"
 namespace PB04 {
     // Device I2C Address
     const MAX11646_I2C_ADDRESS = 0x36
