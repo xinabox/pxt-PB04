@@ -10,5 +10,6 @@
         "pb04.ts",
         "README.md"
     ],
-    "public": true
+    "public": true,
+    "preferredEditor": "tsprj"
 }

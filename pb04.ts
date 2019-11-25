@@ -2,6 +2,14 @@
  * PB04 Intelligent Battery Module
  */
 //% weight=99 color=#000000 icon="\uf240" block="PB04"
+
+enum VOLT {
+    //% block="V"
+    V = 1,
+
+    //% block="mV"
+    MV = 2
+}
 namespace PB04 {
     // Device I2C Address
     const MAX11646_I2C_ADDRESS = 0x36
@@ -58,10 +66,14 @@ namespace PB04 {
     /**
 	* PB04 Voltage (V) measurement
 	*/
-    //% blockId="Voltage" block="get Voltage (mV)"
+    //% blockId="Voltage" block="get Voltage %unit"
     //% weight=99
-    export function getVoltage(): number {
-        return readVoltage();
+    export function getVoltage(unit:VOLT): number {
+        if(unit == VOLT.V){
+            return readVoltage() * 1000
+        }else{
+            return readVoltage()
+        }
     }
 
     /**
