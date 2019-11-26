@@ -68,10 +68,10 @@ namespace PB04 {
 	*/
     //% blockId="Voltage" block="get Voltage %unit"
     //% weight=99
-    export function getVoltage(unit:VOLT): number {
-        if(unit == VOLT.V){
+    export function getVoltage(unit: VOLT): number {
+        if (unit == VOLT.V) {
             return readVoltage() / 1000.0
-        }else{
+        } else {
             return readVoltage()
         }
     }
@@ -83,6 +83,20 @@ namespace PB04 {
     //% weight=99
     export function getCurrent(): number {
         return readCurrent();
+    }
+
+    /**
+    * PB04 Battery percentage
+    */
+    //% blockId="capacity" block="get remaining Battery %"
+    //% weight=99
+    export function getCapacity(): number {
+
+        let voltage:number = getVoltage(VOLT.MV)
+        voltage = Math.min(voltage,3300)
+        let percentage:number = Math.map(voltage,2000,3300,0,100)
+
+        return percentage
     }
 
 }
