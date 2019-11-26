@@ -92,9 +92,9 @@ namespace PB04 {
     //% weight=99
     export function getCapacity(): number {
 
-        let voltage:number = getVoltage(VOLT.MV)
-        voltage = Math.min(voltage,3300)
-        let percentage:number = Math.map(voltage,2000,3300,0,100)
+        let voltage:number = getVoltage(VOLT.V)
+        voltage = Math.min(voltage,3.0)
+        let percentage:number = Math.map(voltage,2.0,3.0,0,100)
 
         return percentage
     }
