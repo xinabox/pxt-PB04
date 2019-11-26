@@ -74,7 +74,7 @@ namespace PB04 {
         let voltage_v: number = voltage_mv / 1000.0
         let voltage_decimal: number = Math.floor(voltage_v)
         basic.showNumber(voltage_decimal)
-        let voltage_fractional: number = Math.floor(Math.ceil((voltage_v % voltage_decimal) * 100) / 100)
+        let voltage_fractional: number = Math.ceil((voltage_v % voltage_decimal) * 100.0) / 100.0
         basic.showNumber(voltage_fractional)
         let voltage: number = voltage_v + voltage_fractional
         basic.showNumber(voltage)
