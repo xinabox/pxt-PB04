@@ -100,10 +100,47 @@ namespace PB04 {
     export function getCapacity(): number {
 
         let voltage: number = getVoltage(VOLT.V)
+        let current: number = getCurrent()
         voltage = Math.min(voltage, 3.0)
-        let percentage: number = Math.map(voltage, 2.0, 3.0, 0, 100)
+        let percentage_under_100: number = Math.map(voltage, 2.0, 3.0, 0, 100)
+        let percentage_100: number
+        let percentage_500: number
 
-        return percentage
+        if (current < 100) {
+            return percentage_under_100;
+        } else if (current > 100 && current < 500) {
+            if (voltage >= 3.0) percentage_100 = 100
+            else if (voltage > 2.8 && voltage < 3.0) percentage_100 = 90
+            else if (voltage > 2.6 && voltage < 2.8) percentage_100 = 80
+            else if (voltage > 2.6 && voltage < 2.7) percentage_100 = 70
+            else if (voltage == 2.6) percentage_100 = 60
+            else if (voltage > 2.5 && voltage < 2.6) percentage_100 = 50
+            else if (voltage == 2.4) percentage_100 = 40
+            else if (voltage > 2.3 && voltage < 2.4) percentage_100 = 30
+            else if (voltage > 2.2 && voltage < 2.3) percentage_100 = 20
+            else if (voltage > 2.0 && voltage < 2.2) percentage_100 = 10
+            else if (voltage < 2.0) percentage_100 = 0
+
+            return percentage_100
+
+        } else if (current > 500) {
+            if (voltage >= 2.95) percentage_500 = 100
+            else if (voltage > 2.8 && voltage < 2.95) percentage_500 = 90
+            else if (voltage > 2.6 && voltage < 2.8) percentage_500 = 80
+            else if (voltage > 2.5 && voltage < 2.6) percentage_500 = 70
+            else if (voltage > 2.4 && voltage < 2.5) percentage_500 = 60
+            else if (voltage > 2.3 && voltage < 2.4) percentage_500 = 50
+            else if (voltage > 2.2 && voltage < 2.3) percentage_500 = 40
+            else if (voltage == 2.2) percentage_500 = 30
+            else if (voltage == 2.2) percentage_500 = 20
+            else if (voltage > 2.0 && voltage < 2.2) percentage_500 = 10
+            else if (voltage < 2.0) percentage_500 = 0
+
+            return percentage_500
+        } else {
+            return 0
+        }
+
     }
 
 }
