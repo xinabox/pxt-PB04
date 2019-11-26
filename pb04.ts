@@ -69,10 +69,17 @@ namespace PB04 {
     //% blockId="Voltage" block="get Voltage %unit"
     //% weight=99
     export function getVoltage(unit: VOLT): number {
+
+        let voltage_mv:number = readVoltage()
+        let voltage_v:number = voltage_mv / 1000.0
+        let voltage_decimal:number = Math.floor(voltage_v)
+        let voltage_fractional:number = Math.ceil((voltage_v%voltage_decimal)*100)
+        let voltage:number = voltage_v + voltage_fractional
+
         if (unit == VOLT.V) {
-            return readVoltage() / 1000.0
+            return voltage
         } else {
-            return readVoltage()
+            return voltage_mv
         }
     }
 
