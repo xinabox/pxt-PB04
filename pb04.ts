@@ -70,7 +70,7 @@ namespace PB04 {
     //% weight=99
     export function getVoltage(unit:VOLT): number {
         if(unit == VOLT.V){
-            return readVoltage() * 1000
+            return readVoltage() / 1000
         }else{
             return readVoltage()
         }
