@@ -117,7 +117,7 @@ namespace PB04 {
             else if (voltage > 2.52 && voltage < 2.56) percentage_under_100 = 30
             else if (voltage > 2.46 && voltage < 2.52) percentage_under_100 = 20
             else if (voltage > 2.4 && voltage < 2.46) percentage_under_100 = 10
-            else if (voltage < 2.4) percentage_under_100 = 0
+            else if (voltage < 2.4) percentage_under_100 = 1
             return percentage_under_100;
 
         } else if (current > 100 && current < 500) {
@@ -131,7 +131,7 @@ namespace PB04 {
             else if (voltage > 2.3 && voltage <= 2.4) percentage_100 = 30
             else if (voltage > 2.2 && voltage <= 2.3) percentage_100 = 20
             else if (voltage > 2.0 && voltage <= 2.2) percentage_100 = 10
-            else if (voltage <= 2.0) percentage_100 = 0
+            else if (voltage <= 2.0) percentage_100 = 1
 
             return percentage_100
 
@@ -146,7 +146,7 @@ namespace PB04 {
             else if (voltage > 2.15 && voltage <= 2.2) percentage_500 = 30
             else if (voltage > 2.1 && voltage <= 2.15) percentage_500 = 20
             else if (voltage > 2.0 && voltage <= 2.1) percentage_500 = 10
-            else if (voltage <= 2.0) percentage_500 = 0
+            else if (voltage <= 2.0) percentage_500 = 1
 
             return percentage_500
         } else {
