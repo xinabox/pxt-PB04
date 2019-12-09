@@ -1,7 +1,7 @@
 {
-    "name": "pxt-PB04",
+    "name": "PB04",
     "version": "0.0.19",
-    "description": "MakeCode Package for the ☒PB04",
+    "description": "XinaBox PB04 Advanced Dual AA Battery",
     "license": "MIT",
     "dependencies": {
         "core": "*"
