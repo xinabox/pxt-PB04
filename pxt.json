@@ -4,8 +4,7 @@
     "description": "XinaBox PB04 Dual AA Battery: Voltage level and Current use",
     "license": "MIT",
     "dependencies": {
-        "core": "*",
-        "xinabox-cs11": "*"
+        "core": "*"
     },
     "files": [
         "pb04.ts",
