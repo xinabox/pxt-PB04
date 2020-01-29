@@ -1,15 +1,16 @@
 {
     "name": "PB04",
     "version": "0.0.19",
-    "description": "XinaBox PB04 Advanced Dual AA Battery",
+    "description": "XinaBox PB04 Dual AA Battery: Voltage level and Current use",
     "license": "MIT",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "xinabox-cs11": "*"
     },
     "files": [
         "pb04.ts",
         "README.md"
     ],
     "public": true,
-    "preferredEditor": "tsprj"
+	"preferredEditor": "blocksprj"
 }
