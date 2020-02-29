@@ -1,8 +1,3 @@
-[![GitHub Issues](https://img.shields.io/github/issues/xinabox/pxt-PB04.svg)](https://github.com/xinabox/pxt-PB04/issues) 
-![GitHub Commit](https://img.shields.io/github/last-commit/xinabox/pxt-PB04) 
-![Maintained](https://img.shields.io/maintenance/yes/2020) 
-![Build status badge](https://github.com/xinabox/pxt-PB04/workflows/maker/badge.svg)
-![Build status badge](https://github.com/xinabox/pxt-PB04/workflows/microbit/badge.svg)
 # pxt-PB04
 MakeCode package for the ☒PB04
 
